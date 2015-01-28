@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-select
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ 
 
 /* universal */
 html {
@@ -87,3 +89,14 @@ p {
   color: #fff;
   text-decoration: none;
 }
+
+.save {
+  margin-top: 60px;
+}
+table {
+  margin:0 auto;
+}
+.select_check_box {
+  margin-right: 10px;
+}
+

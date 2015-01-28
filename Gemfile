@@ -44,4 +44,6 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-select-rails'
+'bootstrap-switch-rails'
 

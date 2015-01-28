@@ -1,2 +1,29 @@
-<h1>SwitchTest#index</h1>
-<p>Find me in app/views/switch_test/index.html.erb</p>
+<h1>SwitchTest</h1>
+<%= form_for :work , url: switch_test_work_path do |f| %>
+  <table >
+    <thead >
+    <tr >
+      <% @comports.each do |comport| %>
+        <th>
+        <p class="center">
+          <%= f.label comport %>
+        </p>
+        </th>
+      <% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <% @comports.each_index do |i| %> 
+        <th class="select_check_box">
+           <%= f.check_box  @comports[i] %>  
+           <%= f.select @swith_comport[i] , @switches %> 
+        </th>
+      <% end %>
+    </tr>
+    <tbody>
+  </table>
+  <p class="center save">
+    <%= f.submit %>
+  </p>
+<% end %>
