@@ -3,7 +3,7 @@
   <table >
     <thead >
     <tr >
-      <% @comports.each do |comport| %>
+      <% @name_comports.each do |comport| %>
         <th>
         <p class="center">
           <%= f.label comport %>
@@ -14,10 +14,12 @@
     </thead>
     <tbody>
     <tr>
-      <% @comports.each_index do |i| %> 
-        <th class="select_check_box">
-           <%= f.check_box  @comports[i] %>  
-           <%= f.select @swith_comport[i] , @switches %> 
+      <% @name_comports.each_index do |i| %> 
+        <th class="select_check_box"> 
+        <%= f.fields_for @name_tty[i] do |fields| %>        
+           <%= fields.check_box @name_tty[i],{}, true, false %> 
+           <%= fields.select @switch_tty[i] , @model_switches %> 
+        <% end %>
         </th>
       <% end %>
     </tr>
@@ -27,3 +29,6 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+
+
