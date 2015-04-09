@@ -1,13 +1,11 @@
 <h1>SwitchTest</h1>
-<%= form_for :work , url: switch_test_work_path do |f| %>
-  <table >
+<%= form_for :work, remote: true, url: switch_test_work_path do |f| %>
+  <table class="table table-bordered table-striped">
     <thead >
     <tr >
       <% @name_comports.each do |comport| %>
         <th>
-        <p class="center">
           <%= f.label comport %>
-        </p>
         </th>
       <% end %>
     </tr>
@@ -16,19 +14,27 @@
     <tr>
       <% @name_comports.each_index do |i| %> 
         <th class="select_check_box"> 
-        <%= f.fields_for @name_tty[i] do |fields| %>        
-           <%= fields.check_box @name_tty[i],{}, true, false %> 
-           <%= fields.select @switch_tty[i] , @model_switches %> 
+        <%= f.fields_for @name_comports[i] do |fields| %>        
+           <%= fields.check_box @name_comports[i],{class: "all_checkbox" }, @name_tty[i], false %> 
+           <%= fields.select  @name_tty[i] , @model_switches , {}, { :class => 'select' }%> 
         <% end %>
         </th>
       <% end %>
     </tr>
     <tbody>
   </table>
-  <p class="center save">
-    <%= f.submit %>
-  </p>
+
+<div class="center"> 
+  <%= f.submit 'test switches', id: "submit", class: "btn btn-danger"%>
+  <h3 id="not_checked" >не стоит не одна галочка</h3>
+</div>
+
+<div id = "table_progress">
+</div>
+
 <% end %>
+
+
 
 
 

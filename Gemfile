@@ -47,4 +47,5 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap-select-rails'
 gem 'bootstrap-switch-rails'
 gem 'serialport'
+gem 'spinjs-rails'
 

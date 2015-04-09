@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   post 'switch_test/work'
+  post 'switch_test/resalt'
+  post 'switch_test/status_result'
+  post 'switch_test/logging'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

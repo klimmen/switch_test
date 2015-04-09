@@ -1,0 +1,10 @@
+<% @result.each do |key| %>
+model_switch.push("<%=key[2]%>")
+name_comport.push("<%=key[0]%>")
+switch_loading_time.push("<%=key[3] %>")
+tty.push("<%=key[1] %>")
+<% end%>
+$('#submit').prop('disabled', true);
+$('.all_checkbox').prop('disabled', true);
+$('.select').prop('disabled', true);
+SetData ()
